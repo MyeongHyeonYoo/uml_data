@@ -1,0 +1,97 @@
+DROP TABLE `BankAccount` CASCADE CONSTRAINTS;
+DROP TABLE `Entity2` CASCADE CONSTRAINTS;
+DROP TABLE `Entity3` CASCADE CONSTRAINTS;
+DROP TABLE `Entity4` CASCADE CONSTRAINTS;
+DROP TABLE `Branch` CASCADE CONSTRAINTS;
+DROP TABLE `JobType` CASCADE CONSTRAINTS;
+DROP TABLE `Employee` CASCADE CONSTRAINTS;
+DROP TABLE `Assignment` CASCADE CONSTRAINTS;
+DROP TABLE `Employee` CASCADE CONSTRAINTS;
+DROP TABLE `Entity9` CASCADE CONSTRAINTS;
+DROP TABLE `Entity10` CASCADE CONSTRAINTS;
+DROP TABLE `EmployeeInfo` CASCADE CONSTRAINTS;
+
+CREATE TABLE `BankAccount` (
+    `account number` INTEGER NOT NULL,
+    `Column1` INTEGER NOT NULL,
+    `Column2` INTEGER NOT NULL,
+    PRIMARY KEY (`account number`)
+);
+
+CREATE TABLE `Entity2` (
+);
+
+CREATE TABLE `Entity3` (
+);
+
+CREATE TABLE `Entity4` (
+);
+
+CREATE TABLE `Branch` (
+    `id` SHORT NOT NULL,
+    `name` CHAR(15) NOT NULL,
+    `country` CHAR(15) NOT NULL,
+    `state` CHAR(10) NOT NULL,
+    `city` CHAR(10) NOT NULL,
+    `street` CHAR(15) NOT NULL,
+    `zip` CHAR(10) NOT NULL,
+    `phone` CHAR(15) NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `JobType` (
+    `id` SHORT NOT NULL,
+    `title` CHAR(25) NOT NULL,
+    `description` CHAR(255) NOT NULL,
+    `complexity` SHORT NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Employee` (
+    `id` SHORT NOT NULL,
+    `branch_id` SHORT NOT NULL,
+    `supervisor_id` SHORT NOT NULL,
+    `firstName` CHAR(25) NOT NULL,
+    `lastName` CHAR(25) NOT NULL,
+    `officeNumber` CHAR(3) NOT NULL,
+    `officePhone` CHAR(15) NOT NULL,
+    `joinDate` DATETIME NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Assignment` (
+    `jobType_id` SHORT NOT NULL,
+    `emp_id` SHORT NOT NULL,
+    `title` CHAR(25) NOT NULL,
+    `description` CHAR(255) NOT NULL,
+    `startDate` DATETIME NOT NULL,
+    `stopDate` CHAR(255) NOT NULL,
+    PRIMARY KEY (`jobType_id`, `emp_id`)
+);
+
+CREATE TABLE `Employee` (
+    `id` SHORT NOT NULL,
+    `branch_id` SHORT NOT NULL,
+    `supervisor_id` SHORT NOT NULL,
+    `firstName` CHAR(25) NOT NULL,
+    `lastName` CHAR(25) NOT NULL,
+    `officeNumber` CHAR(3) NOT NULL,
+    `officePhone` CHAR(15) NOT NULL,
+    `joinDate` DATEWTIME NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Entity9` (
+);
+
+CREATE TABLE `Entity10` (
+);
+
+CREATE TABLE `EmployeeInfo` (
+    `emp_Id` SHORT NOT NULL,
+    `activeDate` DATETIME NOT NULL,
+    `salary` SINGLE NOT NULL,
+    `homeAddress` CHAR(255) NOT NULL,
+    `title` CHAR(25) NOT NULL,
+    PRIMARY KEY (`emp_Id`)
+);

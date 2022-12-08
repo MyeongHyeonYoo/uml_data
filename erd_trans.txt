@@ -1,0 +1,20 @@
+DROP TABLE `Student` CASCADE CONSTRAINTS;
+DROP TABLE `class` CASCADE CONSTRAINTS;
+
+CREATE TABLE `Student` (
+    `student_id` BIGINT(10) NOT NULL,
+    `name` VARCHAR(2) NOT NULL,
+    `class_id` INT NOT NULL,
+    PRIMARY KEY (`student_id`)
+);
+
+CREATE TABLE `class` (
+    `class_id` INT NOT NULL,
+    `teacher_name` VARCHAR(20) NOT NULL,
+    `kuk` INT NOT NULL,
+    `end` INT NOT NULL,
+    `mat` INT NOT NULL,
+    `sic` INT NOT NULL,
+    `his` INT NOT NULL,
+    PRIMARY KEY (`class_id`)
+);
